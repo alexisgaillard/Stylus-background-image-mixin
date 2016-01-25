@@ -1,4 +1,4 @@
-# Stylus background image mixin
+# Stylus background-image mixin
 A Stylus mixin to manage background images.
 
 ### Dependencies
