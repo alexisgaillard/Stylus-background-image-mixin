@@ -53,8 +53,7 @@ Will output:
 @media only screen and (-webkit-min-device-pixel-ratio: 1.3), 
        only screen and (min--moz-device-pixel-ratio: 1.3), 
        only screen and (-o-min-device-pixel-ratio: 1.3/1), 
-       only screen and (min-resolution: 125dpi), only screen and (min-resolution: 1.3dppx) 
-  {
+       only screen and (min-resolution: 125dpi), only screen and (min-resolution: 1.3dppx) {
   .Div__four {
     background-image: url("images/@2ximage.jpg");
     background-size: 980px 660px;
