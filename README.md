@@ -58,7 +58,7 @@ Will output:
 }
 ```
 
-!Note:
+Note:
 - The "check" option will returns the width and height of the image found at the given path, the "check" in addition to the "retina" option will returns the width and height of the image divided by 2 in the @media rule.
 - The "retina" option prefix the filename with "@2x".
 - If you work with a lot of retina background images you should think about @extend the function.
