@@ -1,0 +1,45 @@
+/*
+* fileN: file name with extension
+* size: width and height with px or %, auto, length, cover, contain, initial, inherit
+* position: left top center bottom, px, %, initial, inherit
+* argument: repeat, repeatY, repeatX, retina
+* imageP: path to the image folder, for ex. "../images"
+*/
+backgroundImage(
+  fileN,
+  size = null,
+  position = null,
+  argument = null,
+  imageP = '../images'
+)
+  imageURL = imageP + '/' + fileN
+  background-image url(imageURL)
+  if size && size != check
+    background-size size
+  if size == check
+    background-size image-size(imageURL)
+  if position
+    background-position position
+  if argument
+    if clip in argument
+      background-clip clip
+    if origin in argument
+      background-origin origin
+    if repeatX in argument
+      background-repeat repeat-x
+    if repeatY in argument
+      background-repeat repeat-y
+    if repeat in argument
+      background-repeat repeat
+    if !(repeat in argument || repeatY in argument || repeatX in argument)
+      background-repeat none
+  else
+    background-repeat none
+  if retina in argument
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 1.3 / 1), only screen and (min-resolution: 125dpi), only screen and (min-resolution: 1.3dppx)
+      background-image url(imageP + '/@2x' + basename(imageURL))
+      if size == check
+        imageSize = image-size(imageURL)
+        width = imageSize[0]/2
+        height = imageSize[1]/2
+        background-size width height
